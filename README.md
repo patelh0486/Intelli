@@ -24,38 +24,71 @@ above; i.e. [entity, attribute, value, true if added else if it was retracted).
 
 
 const facts = [
+
  ['gabriel', 'address', 'baker street, 109', true],
+ 
  ['john', 'address', 'apple street, 10', true],
+ 
  ['john', ''address', 'pine street, 88', true],
+ 
  ['john', 'phone', '234-5678', true],
+ 
  ['john', 'phone', '91234-5555', true],
+ 
  ['john', 'phone', '234-5678', false],
+ 
  ['gabriel', 'phone', '98888-1111', true],
+ 
  ['gabriel', 'phone', '56789-1010', true],
+ 
 ];
+
 You can assume the list is ordered from oldest to newest.
+
 The schema for this domain which defines the cardinality for each attribute is:
+
 const schema = [
+
  ['address', 'cardinality', 'one'],
+ 
  ['phone', 'cardinality', 'many']
+ 
 ];
+
 i.e. an entity can have multiple (one-to-many) phones, while 'address' is a one-to-one
 relationship.
+
 In this example, the following records represent the history of addresses that john already
 had:
+
 [['john', 'address', 'rua alice, 10', true],
+
  ['john', 'address', 'rua bob, 88', true]]
+ 
 Where the current value is the latest one.
+
 The goal of this programming task is to write a function that returns the "current facts"
+
 about these entities. i.e. only the latest information at current time.
+
 The function should receive `facts` (the historical facts) and `schema` as arguments.
+
 The expected result for this example is the set (order is not important):
+
 [
+
  ['gabriel', 'address', 'baker street, 109', true],
+ 
  ['john', 'address', 'pine street, 88', true],
+ 
  ['john', 'phone', '91234-5555', true],
+ 
  ['gabriel', 'phone', '98888-1111', true],
+ 
  ['gabriel', 'phone', '56789-1010', true]
+ 
 ]
+
 Feel free to write the solution in whichever programming language you feel more comfortable.
+
 
