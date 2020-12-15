@@ -1,18 +1,28 @@
 # Intelli
- Software Developer - Coding challenge
+ 
 Software Developer - Coding challenge
+
+
 Consider a information model where each record is represented by an immutable tuple. This
 tuple in this context is called a fact.
+
 Example of a fact:
 ('john', 'age', 18, true)
 In this representation, the subject (or entity) 'john' has a value of '18' associated with the
 attribute 'age'.
+
 To represent a deletion (or retraction) of information, the fourth element of the tuple can be
 'false' to indicate that the corresponding entity's attribute no longer has that value.
+
+
 As it is common in many domains, attributes can have cardinality of either a single value
 (one) or multiplicity (> 1, many) is allowed.
+
+
 The following is an example of a list of facts in the format (E, A, V, added?) explained
 above; i.e. [entity, attribute, value, true if added else if it was retracted).
+
+
 const facts = [
  ['gabriel', 'address', 'baker street, 109', true],
  ['john', 'address', 'apple street, 10', true],
